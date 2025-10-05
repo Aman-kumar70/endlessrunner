@@ -27,8 +27,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 forwardmove = Vector3.forward * speed * Time.fixedDeltaTime; // Continous Movement In forward Direction.
         Vector3 sidemove = Vector3.right * horizontalInput * horispeed * Time.fixedDeltaTime; // Sideway Movement by using User Input.
         
-        rb.MovePosition(rb.position + forwardmove + sidemove ); // Applying the Movement via Rigibody Physics.
-
+        rb.MovePosition(rb.position + forwardmove + sidemove ); 
     }
 
     private void Update() // Check every frame for Input
@@ -58,9 +57,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) // For Collectbies
     {
-        if (other.gameObject.CompareTag("Pickup")) // Check if the player Collide with Collectbies.
+        if (other.gameObject.CompareTag("Pickup")) 
         {
-            other.gameObject.SetActive(false); //Make the Collectbies Inactive When collided.
+            other.gameObject.SetActive(false); 
             count += 1;
             SetCount();
         }
@@ -68,7 +67,8 @@ public class PlayerMovement : MonoBehaviour
 
     void SetCount() // function for Score Display
     {
-        CountText.text = "Score: " + count.ToString(); //It will Display the Score in the Unity Scene via UI text.
+        CountText.text = "Score: " + count.ToString(); 
         ScoreMenu.text = CountText.text;
     }
 }
+
