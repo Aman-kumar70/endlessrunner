@@ -6,14 +6,15 @@ public class GroundFloor : MonoBehaviour
 
     void Start()
     {
-        groundSpawner = GameObject.FindFirstObjectByType<Spawn>(); // It will find Spawn Script and Save it to groundspawner var.
+        groundSpawner = GameObject.FindFirstObjectByType<Spawn>();
     }
     private void OnTriggerExit(Collider other) // Run when player leaves the Trigger zone.
     {
-        if (other.CompareTag("Player")) // Check if the player leaves.
+        if (other.CompareTag("Player"))
         {
-            groundSpawner.Spawnfloor(); // Spawn next Ground Floor 
+            groundSpawner.Spawnfloor(); 
         }
-        Destroy(gameObject, 2); // It will wait for 2 seconds and destroy old floor.
+        Destroy(gameObject, 2); 
     }
 }
+
